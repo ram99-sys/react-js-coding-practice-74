@@ -1,0 +1,85 @@
+.login-and-image-container {
+  display: flex;
+  min-height: 100vh;
+}
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  background-color: #e5e5e5;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.form-container {
+  background-color: #fefeff;
+  box-shadow: 0px 8px 40px rgba(7, 7, 7, 0.08);
+  border-radius: 8px;
+  width: 400px;
+  padding: 50px;
+}
+.tasty-kitchen-text {
+  color: #f7931e;
+  font-family: 'DM Sans';
+  font-weight: bold;
+  font-style: italic;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'DM Sans';
+}
+.image-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tasty-kitchen-image {
+  margin-top: 5px;
+}
+.login-text {
+  font-family: 'DM Sans';
+  font-weight: 500;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.label-element {
+  color: #475569;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+.input-element {
+  background: #e2e8f0;
+  border-radius: 8px;
+  border: none;
+  height: 40px;
+  padding-left: 10px;
+}
+.input-element:focus {
+  outline: none;
+  border: none;
+}
+.login-button {
+  border: none;
+  border-radius: 8px;
+  background: #f7931e;
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.error-message {
+  color: #ef4444;
+  font-size: 14px;
+}

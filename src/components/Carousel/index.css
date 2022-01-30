@@ -1,0 +1,22 @@
+.slider-container {
+  padding: 30px 12%;
+  width: 100%;
+  padding-left: 12%;
+  margin-top: 20px;
+}
+.offer-image {
+  height: 300px;
+  width: 100%;
+}
+.slick-slide:focus {
+  outline: none;
+}
+.slick-slide img {
+  margin: auto;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
