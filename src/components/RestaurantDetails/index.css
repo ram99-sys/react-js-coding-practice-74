@@ -1,0 +1,14 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.restaurant-bg-container {
+  background-image: url('https://res.cloudinary.com/dfzg7dbem/image/upload/v1643633106/Rectangle_1399_oa473s.png');
+  margin-top: 50px;
+  padding: 20px 12%;
+}
+.restaurant-image {
+  height: 200px;
+  width: 300px;
+}

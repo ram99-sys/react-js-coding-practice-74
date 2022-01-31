@@ -1,0 +1,45 @@
+.footer-container {
+  background-color: #0f172a;
+  padding: 100px;
+}
+.footer-image {
+  color: #ffffff;
+  filter: brightness(0) invert(1);
+  margin-right: 20px;
+}
+.footer-heading {
+  font-family: 'DM Sans';
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+  color: #ffffff;
+}
+.image-and-logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-text {
+  text-align: center;
+  font-family: 'DM Sans';
+  font-size: 24px;
+  color: #ffffff;
+  margin-top: 10px;
+}
+.footer-contact-us-text {
+  text-align: center;
+  font-family: 'DM Sans';
+  font-size: 24px;
+  color: #ffffff;
+  margin-top: 10px;
+}
+.footer-icon {
+  color: #ffffff;
+  margin-right: 30px;
+}
+.icons-section {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 30px;
+}

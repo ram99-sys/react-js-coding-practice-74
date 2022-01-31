@@ -7,6 +7,7 @@ import RestaurantDetails from './components/RestaurantDetails'
 import Cart from './components/Cart'
 import NotFound from './components/NotFound'
 
+/*
 const sortByOptions = [
   {
     id: 0,
@@ -19,6 +20,8 @@ const sortByOptions = [
     value: 'Lowest',
   },
 ]
+
+*/
 
 const App = () => (
   <Switch>

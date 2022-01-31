@@ -11,6 +11,7 @@ import {
 import {BsFilterRight} from 'react-icons/bs'
 import Header from '../Header'
 import Carousel from '../Carousel'
+import Footer from '../Footer'
 import './index.css'
 
 const sortByOptions = [
@@ -220,6 +221,7 @@ class Home extends Component {
             <AiOutlineRightSquare size={30} className="icon" />
           </button>
         </div>
+        <Footer />
       </>
     )
   }
