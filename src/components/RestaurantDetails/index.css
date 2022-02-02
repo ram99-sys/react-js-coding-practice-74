@@ -2,13 +2,98 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  font-family: 'DM Sans';
 }
 .restaurant-bg-container {
   background-image: url('https://res.cloudinary.com/dfzg7dbem/image/upload/v1643633106/Rectangle_1399_oa473s.png');
   margin-top: 50px;
   padding: 20px 12%;
+  display: flex;
+  align-items: center;
 }
-.restaurant-image {
-  height: 200px;
-  width: 300px;
+.restaurant-image1 {
+  height: 280px;
+  width: 445px;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+.restaurant-name-data {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 500;
+  width: 500px;
+}
+.cuisine-data {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Roboto';
+  color: #ffffff;
+  margin-top: 10px;
+}
+.location-data {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Roboto';
+  color: #ffffff;
+  margin-top: 10px;
+}
+.icon-rating-section {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.rating-data {
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  width: 100px;
+  padding: 5px;
+}
+.rating-count-data {
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  width: 115px;
+}
+.star {
+  color: #ffffff;
+}
+.cost-rating-section {
+  display: flex;
+}
+.cost-for-two-container {
+  margin-top: 10px;
+}
+.cost-for-two {
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  margin-left: 30px;
+  padding: 5px;
+}
+.cost-for-two-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  margin-left: 30px;
+}
+.restaurant-details-loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
+.restaurant-items-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+.restaurant-details-loader-container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
 }

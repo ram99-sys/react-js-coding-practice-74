@@ -1,0 +1,80 @@
+.dish-image {
+  height: 180px;
+  width: 320px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+.dishes-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 12%;
+  margin-bottom: 30px;
+}
+.dish-name {
+  color: #334155;
+  font-weight: 700;
+  font-family: 'DM Sans';
+  font-size: 18px;
+  margin-top: 10px;
+  width: 120px;
+}
+.dish-cost {
+  color: #334155;
+  font-family: 'DM Sans';
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.dish-rating {
+  color: #0a1f44;
+  font-weight: 700;
+  font-family: 'DM Sans';
+  font-size: 14px;
+}
+.icon-and-rating-section {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.dish-icon {
+  margin-right: 5px;
+  color: #ffcc00;
+}
+.add-button {
+  color: #ffa412;
+  background-color: transparent;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid #ffa412;
+  margin-top: 10px;
+}
+.quantity-section {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.minus-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.plus-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.minus-icon {
+  color: #475569;
+  margin-right: 10px;
+}
+.plus-icon {
+  color: #475569;
+}
+.quantity {
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #3e4c59;
+  margin-bottom: 3px;
+}

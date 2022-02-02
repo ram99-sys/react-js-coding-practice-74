@@ -1,7 +1,12 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
+import {AiFillStar} from 'react-icons/ai'
+import Loader from 'react-loader-spinner'
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Header from '../Header'
 import './index.css'
+import RestaurantItem from '../RestaurantItem'
+import Footer from '../Footer'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -35,7 +40,7 @@ class RestaurantDetails extends Component {
     }
     const response = await fetch(apiUrl, options)
     const data = await response.json()
-    console.log(data)
+    // console.log(data)
     const updatedData = {
       costForTwo: data.cost_for_two,
       cuisine: data.cuisine,
@@ -57,8 +62,9 @@ class RestaurantDetails extends Component {
       rating: eachObject.rating,
       imageUrl: eachObject.image_url,
       foodType: eachObject.food_type,
+      quantity: 1,
     }))
-    console.log(itemsData)
+    // console.log(itemsData)
     this.setState({
       apiStatus: apiStatusConstants.success,
       restaurantData: updatedData,
@@ -68,7 +74,7 @@ class RestaurantDetails extends Component {
 
   renderRestaurantDataView = () => {
     const {restaurantData} = this.state
-    console.log(restaurantData)
+    // console.log(restaurantData)
     const {
       costForTwo,
       cuisine,
@@ -84,17 +90,34 @@ class RestaurantDetails extends Component {
 
     return (
       <div className="restaurant-bg-container">
-        <img src={imageUrl} alt="" className="restaurant-image" />
+        <img src={imageUrl} alt="" className="restaurant-image1" />
         <div>
-          <h1>{name}</h1>
-          <p>{cuisine}</p>
-          <p>{location}</p>
+          <h1 className="restaurant-name-data">{name}</h1>
+          <p className="cuisine-data">{cuisine}</p>
+          <p className="location-data">{location}</p>
+          <div className="cost-rating-section">
+            <div>
+              <div className="icon-rating-section">
+                <AiFillStar size={15} className="star" />
+                <p className="rating-data">{rating}</p>
+              </div>
+              <p className="rating-count-data">{reviewsCount}+ Ratings</p>
+            </div>
+            <div className="cost-for-two-container">
+              <p className="cost-for-two">&#8377;&nbsp;{costForTwo}</p>
+              <p className="cost-for-two-text">Cost for two</p>
+            </div>
+          </div>
         </div>
       </div>
     )
   }
 
-  renderRestaurantDataInProgressView = () => <h1>In Progress</h1>
+  renderRestaurantDataInProgressView = () => (
+    <div className="restaurant-details-loader-container">
+      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+    </div>
+  )
 
   renderApiView = () => {
     const {apiStatus} = this.state
@@ -109,11 +132,47 @@ class RestaurantDetails extends Component {
     }
   }
 
+  renderRestaurantItemsDataView = () => {
+    const {restaurantItemsData} = this.state
+
+    return (
+      <ul className="restaurant-items-container">
+        {restaurantItemsData.map(eachRestaurantItem => (
+          <RestaurantItem
+            key={eachRestaurantItem.id}
+            restaurantItemDetails={eachRestaurantItem}
+          />
+        ))}
+      </ul>
+    )
+  }
+
+  renderRestaurantItemsDataInProgressView = () => (
+    <div className="restaurant-details-loader-container1">
+      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+    </div>
+  )
+
+  renderRestaurantApiView = () => {
+    const {apiStatus} = this.state
+
+    switch (apiStatus) {
+      case apiStatusConstants.success:
+        return this.renderRestaurantItemsDataView()
+      case apiStatusConstants.inProgress:
+        return this.renderRestaurantItemsDataInProgressView()
+      default:
+        return null
+    }
+  }
+
   render() {
     return (
       <div>
         <Header />
         <div>{this.renderApiView()}</div>
+        <div>{this.renderRestaurantApiView()}</div>
+        <Footer />
       </div>
     )
   }
