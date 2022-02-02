@@ -25,6 +25,8 @@ const sortByOptions = [
 
 */
 
+const cartData = []
+
 class App extends Component {
   state = {cartList: []}
 
@@ -34,10 +36,16 @@ class App extends Component {
     const data = {cost, id, imageUrl, name, quantity}
     const updatedData = [...cartList, data]
     this.setState({cartList: updatedData})
+
+    // update on local storage
+    const cartObject = {id, imageUrl, cost, name, quantity}
+    cartData.push(cartObject)
+    localStorage.setItem('cartItem', JSON.stringify(cartData))
   }
 
   decrementItemQuantity = itemDetails => {
     const {id} = itemDetails
+    /*
     this.setState(prevState => ({
       cartList: prevState.cartList.map(eachItem => {
         if (eachItem.id === id) {
@@ -49,10 +57,28 @@ class App extends Component {
         return eachItem
       }),
     }))
+    */
+
+    // update quantity on local storage
+    const storedData = JSON.parse(localStorage.getItem('cartItem'))
+    console.log(storedData)
+
+    const updatedData = storedData.map(eachObjectData => {
+      if (eachObjectData.id === id) {
+        if (eachObjectData.quantity > 1) {
+          const updatedQuantity = eachObjectData.quantity - 1
+          return {...eachObjectData, quantity: updatedQuantity}
+        }
+      }
+      return eachObjectData
+    })
+    console.log(updatedData)
+    localStorage.setItem('cartItem', JSON.stringify(updatedData))
   }
 
   incrementItemQuantity = itemDetails => {
     const {id} = itemDetails
+    /*
     this.setState(prevState => ({
       cartList: prevState.cartList.map(eachItem => {
         if (eachItem.id === id) {
@@ -62,11 +88,26 @@ class App extends Component {
         return eachItem
       }),
     }))
+    */
+
+    // update Quantity on local Storage
+    const storedData = JSON.parse(localStorage.getItem('cartItem'))
+    // console.log(storedData)
+
+    const updatedArray = storedData.map(eachObject => {
+      if (eachObject.id === id) {
+        const updatedQuantity = eachObject.quantity + 1
+        return {...eachObject, quantity: updatedQuantity}
+      }
+      return eachObject
+    })
+    console.log(updatedArray)
+    localStorage.setItem('cartItem', JSON.stringify(updatedArray))
   }
 
   render() {
     const {cartList} = this.state
-    console.log(cartList)
+    //  console.log(cartList)
 
     return (
       <CartContext.Provider

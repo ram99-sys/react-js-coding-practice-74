@@ -1,0 +1,54 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.cart-items-container {
+  margin-top: 80px;
+  background-color: #f9fbfe;
+  margin-left: 12%;
+  margin-right: 12%;
+  border: 1px solid rgba(11, 105, 255, 0.1);
+}
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-left: 15%;
+  margin-right: 8%;
+}
+.cart-value {
+  font-size: 20px;
+  font-weight: 500;
+  color: #475569;
+  font-family: 'DM Sans';
+}
+.cart-items {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+.hr-line {
+  border: 1px dashed #cbd2d9;
+  margin-bottom: 20px;
+  margin-left: 4%;
+  margin-right: 8%;
+}
+.order-total {
+  font-family: 'Roboto';
+  font-size: 24px;
+  color: #3e4c59;
+}
+.total-price-section {
+  margin-left: 4%;
+  margin-bottom: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 8%;
+}
+.total-price1 {
+  color: #3e4c59;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'DM Sans';
+}

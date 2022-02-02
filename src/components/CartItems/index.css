@@ -1,0 +1,57 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.cart-item-image {
+  height: 120px;
+  width: 120px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+.image-and-name {
+  display: flex;
+  align-items: center;
+  width: 65%;
+}
+.controls-container {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+.minus-button1 {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.plus-button1 {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.items-container1 {
+  display: flex;
+  align-items: center;
+  margin-left: 4%;
+  margin-right: 10%;
+  margin-bottom: 20px;
+}
+.dish-name1 {
+  color: #183b56;
+  font-size: 20px;
+  font-weight: 500;
+}
+.quantity-item {
+  font-size: 16px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.total-price {
+  color: #ffa412;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'DM Sans';
+  width: 6%;
+}

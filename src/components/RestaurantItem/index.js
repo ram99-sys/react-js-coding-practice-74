@@ -32,7 +32,7 @@ class RestaurantItem extends Component {
           }
 
           const onClickIncreaseQuantity = async () => {
-            this.setState(prevState => ({
+            await this.setState(prevState => ({
               itemQuantity: prevState.itemQuantity + 1,
             }))
             await incrementItemQuantity(restaurantItemDetails)
