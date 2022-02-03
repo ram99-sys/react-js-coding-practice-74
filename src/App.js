@@ -22,7 +22,6 @@ const sortByOptions = [
     value: 'Lowest',
   },
 ]
-
 */
 
 const cartData = []
@@ -31,16 +30,42 @@ class App extends Component {
   state = {cartList: []}
 
   addCartItem = itemDetails => {
-    const {cartList} = this.state
     const {cost, id, imageUrl, name, quantity} = itemDetails
+    /*
+    const {cartList} = this.state
     const data = {cost, id, imageUrl, name, quantity}
     const updatedData = [...cartList, data]
     this.setState({cartList: updatedData})
+    */
 
     // update on local storage
     const cartObject = {id, imageUrl, cost, name, quantity}
     cartData.push(cartObject)
     localStorage.setItem('cartItem', JSON.stringify(cartData))
+  }
+
+  removeCartItem = (storedData, id) => {
+    const updatedData = storedData.filter(eachObjectData => {
+      if (eachObjectData.id === id) {
+        return eachObjectData.id !== id
+      }
+      return eachObjectData
+    })
+    return updatedData
+  }
+
+  decreaseItemQuantity = (storedData, id) => {
+    const updatedData = storedData.map(eachObjectData => {
+      if (eachObjectData.quantity > 1) {
+        if (eachObjectData.id === id) {
+          const updatedQuantity = eachObjectData.quantity - 1
+          return {...eachObjectData, quantity: updatedQuantity}
+        }
+        return eachObjectData
+      }
+      return eachObjectData
+    })
+    return updatedData
   }
 
   decrementItemQuantity = itemDetails => {
@@ -63,6 +88,17 @@ class App extends Component {
     const storedData = JSON.parse(localStorage.getItem('cartItem'))
     console.log(storedData)
 
+    const findObject = storedData.find(eachObject => eachObject.id === id)
+    if (findObject.quantity === 1) {
+      const updatedData = this.removeCartItem(storedData, id)
+      console.log(updatedData)
+      localStorage.setItem('cartItem', JSON.stringify(updatedData))
+    } else {
+      const updatedData = this.decreaseItemQuantity(storedData, id)
+      console.log(updatedData)
+      localStorage.setItem('cartItem', JSON.stringify(updatedData))
+    }
+    /*
     const updatedData = storedData.map(eachObjectData => {
       if (eachObjectData.id === id) {
         if (eachObjectData.quantity > 1) {
@@ -74,6 +110,7 @@ class App extends Component {
     })
     console.log(updatedData)
     localStorage.setItem('cartItem', JSON.stringify(updatedData))
+    */
   }
 
   incrementItemQuantity = itemDetails => {

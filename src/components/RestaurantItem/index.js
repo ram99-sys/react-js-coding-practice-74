@@ -44,6 +44,9 @@ class RestaurantItem extends Component {
                 itemQuantity: prevState.itemQuantity - 1,
               }))
             }
+            if (itemQuantity === 1) {
+              await this.setState({isItemAdded: true})
+            }
             await decrementItemQuantity(restaurantItemDetails)
           }
 
