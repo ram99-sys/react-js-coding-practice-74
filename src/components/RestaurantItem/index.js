@@ -12,7 +12,7 @@ class RestaurantItem extends Component {
 
   render() {
     const {restaurantItemDetails} = this.props
-    const {id, imageUrl, cost, name, rating, quantity} = restaurantItemDetails
+    const {imageUrl, cost, name, rating} = restaurantItemDetails
     const {isItemAdded, itemQuantity} = this.state
     return (
       <CartContext.Consumer>

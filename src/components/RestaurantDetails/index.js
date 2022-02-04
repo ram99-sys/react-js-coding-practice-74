@@ -40,7 +40,10 @@ class RestaurantDetails extends Component {
     }
     const response = await fetch(apiUrl, options)
     const data = await response.json()
+
+    // console.log(itemQuantity)
     // console.log(data)
+
     const updatedData = {
       costForTwo: data.cost_for_two,
       cuisine: data.cuisine,

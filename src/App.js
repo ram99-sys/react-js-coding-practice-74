@@ -24,8 +24,6 @@ const sortByOptions = [
 ]
 */
 
-const cartData = []
-
 class App extends Component {
   state = {cartList: []}
 
@@ -39,9 +37,21 @@ class App extends Component {
     */
 
     // update on local storage
-    const cartObject = {id, imageUrl, cost, name, quantity}
-    cartData.push(cartObject)
-    localStorage.setItem('cartItem', JSON.stringify(cartData))
+    const storedData = JSON.parse(localStorage.getItem('cartItem'))
+    if (storedData === null) {
+      const cartObject = {id, imageUrl, cost, name, quantity}
+      localStorage.setItem('cartItem', JSON.stringify([cartObject]))
+    } else {
+      const findObject = storedData.find(eachObject => eachObject.id === id)
+      if (findObject === undefined) {
+        const cartObject = {id, imageUrl, cost, name, quantity}
+        storedData.push(cartObject)
+        localStorage.setItem('cartItem', JSON.stringify(storedData))
+        // this.incrementItemQuantity(itemDetails)
+      } else {
+        this.incrementItemQuantity(itemDetails)
+      }
+    }
   }
 
   removeCartItem = (storedData, id) => {
@@ -70,19 +80,6 @@ class App extends Component {
 
   decrementItemQuantity = itemDetails => {
     const {id} = itemDetails
-    /*
-    this.setState(prevState => ({
-      cartList: prevState.cartList.map(eachItem => {
-        if (eachItem.id === id) {
-          if (eachItem.quantity > 1) {
-            const updatedQuantity = eachItem.quantity - 1
-            return {...eachItem, quantity: updatedQuantity}
-          }
-        }
-        return eachItem
-      }),
-    }))
-    */
 
     // update quantity on local storage
     const storedData = JSON.parse(localStorage.getItem('cartItem'))
@@ -98,19 +95,6 @@ class App extends Component {
       console.log(updatedData)
       localStorage.setItem('cartItem', JSON.stringify(updatedData))
     }
-    /*
-    const updatedData = storedData.map(eachObjectData => {
-      if (eachObjectData.id === id) {
-        if (eachObjectData.quantity > 1) {
-          const updatedQuantity = eachObjectData.quantity - 1
-          return {...eachObjectData, quantity: updatedQuantity}
-        }
-      }
-      return eachObjectData
-    })
-    console.log(updatedData)
-    localStorage.setItem('cartItem', JSON.stringify(updatedData))
-    */
   }
 
   incrementItemQuantity = itemDetails => {

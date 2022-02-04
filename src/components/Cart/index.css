@@ -52,3 +52,7 @@
   font-weight: 400;
   font-family: 'DM Sans';
 }
+.button-section {
+  float: right;
+  margin-bottom: 20px;
+}
