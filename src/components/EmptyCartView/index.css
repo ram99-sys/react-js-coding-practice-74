@@ -1,0 +1,22 @@
+.empty-cart-container {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.coffee-image {
+}
+.no-orders-heading {
+  color: #1e293b;
+  margin-top: 20px;
+  font-size: 32px;
+  font-family: 'DM Sans';
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.add-something-text {
+  color: #64748b;
+  font-size: 16px;
+  margin-bottom: 10px;
+}

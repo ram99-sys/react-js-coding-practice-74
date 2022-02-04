@@ -19,7 +19,6 @@ class RestaurantItem extends Component {
         {value => {
           const {
             addCartItem,
-            cartList,
             incrementItemQuantity,
             decrementItemQuantity,
           } = value
@@ -51,10 +50,10 @@ class RestaurantItem extends Component {
           }
 
           return (
-            <div className="dishes-container">
+            <li className="dishes-container" testid="foodItem">
               <img src={imageUrl} alt="" className="dish-image" />
               <div>
-                <p className="dish-name">{name}</p>
+                <h1 className="dish-name">{name}</h1>
                 <p className="dish-cost">
                   <span>&#8377;&nbsp;</span>
                   {cost}
@@ -78,21 +77,25 @@ class RestaurantItem extends Component {
                       type="button"
                       className="minus-button"
                       onClick={onClickDecreaseQuantity}
+                      testid="decrement-count"
                     >
                       <AiOutlineMinusSquare size={20} className="minus-icon" />
                     </button>
-                    <p className="quantity">{itemQuantity}</p>
+                    <p className="quantity" testid="active-count">
+                      {itemQuantity}
+                    </p>
                     <button
                       type="button"
                       className="plus-button"
                       onClick={onClickIncreaseQuantity}
+                      testid="increment-count"
                     >
                       <AiOutlinePlusSquare size={20} className="plus-icon" />
                     </button>
                   </div>
                 )}
               </div>
-            </div>
+            </li>
           )
         }}
       </CartContext.Consumer>

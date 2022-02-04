@@ -9,6 +9,7 @@
   margin-left: 12%;
   margin-right: 12%;
   border: 1px solid rgba(11, 105, 255, 0.1);
+  margin-bottom: 100px;
 }
 .cart-header {
   display: flex;
@@ -26,6 +27,7 @@
 .cart-items {
   margin-top: 10px;
   margin-bottom: 50px;
+  list-style-type: none;
 }
 .hr-line {
   border: 1px dashed #cbd2d9;
@@ -40,7 +42,7 @@
 }
 .total-price-section {
   margin-left: 4%;
-  margin-bottom: 5%;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -52,7 +54,16 @@
   font-weight: 400;
   font-family: 'DM Sans';
 }
-.button-section {
-  float: right;
-  margin-bottom: 20px;
+.shop-now-button {
+  cursor: pointer;
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-left: 83%;
+  background-color: #f7931e;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 8px 20px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
 }

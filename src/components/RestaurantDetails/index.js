@@ -82,18 +82,15 @@ class RestaurantDetails extends Component {
       costForTwo,
       cuisine,
       imageUrl,
-      itemsCount,
       location,
       name,
-      opensAt,
       rating,
       reviewsCount,
-      id,
     } = restaurantData
 
     return (
       <div className="restaurant-bg-container">
-        <img src={imageUrl} alt="" className="restaurant-image1" />
+        <img src={imageUrl} alt="restaurant" className="restaurant-image1" />
         <div>
           <h1 className="restaurant-name-data">{name}</h1>
           <p className="cuisine-data">{cuisine}</p>
@@ -117,8 +114,11 @@ class RestaurantDetails extends Component {
   }
 
   renderRestaurantDataInProgressView = () => (
-    <div className="restaurant-details-loader-container">
-      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+    <div
+      className="restaurant-details-loader-container"
+      testid="restaurant-details-loader"
+    >
+      <Loader type="Oval" color="#F7931E" height="50" width="50" />
     </div>
   )
 
@@ -151,8 +151,11 @@ class RestaurantDetails extends Component {
   }
 
   renderRestaurantItemsDataInProgressView = () => (
-    <div className="restaurant-details-loader-container1">
-      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+    <div
+      className="restaurant-details-loader-container1"
+      testid="restaurant-details-loader"
+    >
+      <Loader type="Oval" color="#F7931E" height="50" width="50" />
     </div>
   )
 

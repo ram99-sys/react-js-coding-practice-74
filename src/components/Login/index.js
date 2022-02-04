@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import './index.css'
 
@@ -47,6 +48,11 @@ class Login extends Component {
 
   render() {
     const {username, password, errorMessage, isFormSubmitted} = this.state
+    const jwtToken = Cookies.get('jwt_token')
+
+    if (jwtToken !== undefined) {
+      return <Redirect to="/" />
+    }
 
     return (
       <div className="login-and-image-container">
@@ -55,10 +61,10 @@ class Login extends Component {
             <div className="image-text">
               <img
                 src="https://res.cloudinary.com/dfzg7dbem/image/upload/v1643476740/Frame_274_qovatm.png"
-                alt=""
+                alt="website logo"
                 className="tasty-kitchen-image"
               />
-              <p className="tasty-kitchen-text">Tasty Kitchens</p>
+              <h1 className="tasty-kitchen-text">Tasty Kitchens</h1>
             </div>
             <h1 className="login-text">Login</h1>
             <form onSubmit={this.submitForm}>
@@ -97,7 +103,8 @@ class Login extends Component {
         </div>
         <img
           src="https://res.cloudinary.com/dfzg7dbem/image/upload/v1643474405/Rectangle_1456_wewiig.png"
-          alt=""
+          alt="website login"
+          className="tasty-kitchens-image1"
         />
       </div>
     )

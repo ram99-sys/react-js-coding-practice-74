@@ -2,13 +2,15 @@ import {Component} from 'react'
 import Header from '../Header'
 import CartItems from '../CartItems'
 import EmptyCartView from '../EmptyCartView'
+import Footer from '../Footer'
+import OrderSuccessfulView from '../OrderSuccessfulView'
 import './index.css'
 
 class Cart extends Component {
   state = {cartItemsData: [], isOrderSubmitted: false, totalAmount: 0}
 
   componentDidMount() {
-    const storedRestaurantItemsData = localStorage.getItem('cartItem')
+    const storedRestaurantItemsData = localStorage.getItem('cartData')
     const parseStoredData = JSON.parse(storedRestaurantItemsData)
     console.log(parseStoredData)
     let total = 0
@@ -22,7 +24,7 @@ class Cart extends Component {
   }
 
   updateStatus = () => {
-    const storedRestaurantItemsData = localStorage.getItem('cartItem')
+    const storedRestaurantItemsData = localStorage.getItem('cartData')
     const parseStoredData = JSON.parse(storedRestaurantItemsData)
     console.log(parseStoredData)
     let total = 0
@@ -37,51 +39,69 @@ class Cart extends Component {
 
   onClickShopNowButton = () => {
     this.setState({isOrderSubmitted: true})
+    localStorage.clear('cartData')
+  }
+
+  renderCartView = () => {
+    const {isOrderSubmitted, cartItemsData, totalAmount} = this.state
+
+    return !isOrderSubmitted ? (
+      <>
+        <ul className="cart-items-container">
+          <div className="cart-header">
+            <p className="cart-value">Item</p>
+            <p className="cart-value">Quantity</p>
+            <p className="cart-value">Price</p>
+          </div>
+          <ul className="cart-items" testid="cartItem">
+            {cartItemsData.map(eachObject => (
+              <CartItems
+                key={eachObject.id}
+                cartItemDetails={eachObject}
+                updateStatus={this.updateStatus}
+              />
+            ))}
+          </ul>
+          <hr className="hr-line" />
+          <div className="submit-section">
+            <div className="total-price-section">
+              <h1 className="order-total">Order Total:</h1>
+              <p className="total-price1" testid="total-price">
+                {totalAmount}.00
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={this.onClickShopNowButton}
+              className="shop-now-button"
+            >
+              Place Order
+            </button>
+          </div>
+        </ul>
+        <Footer />
+      </>
+    ) : (
+      <OrderSuccessfulView />
+    )
+  }
+
+  renderView = () => {
+    const {cartItemsData} = this.state
+    if (cartItemsData.length !== 0) {
+      return this.renderCartView()
+    }
+    return <EmptyCartView />
   }
 
   render() {
-    const {cartItemsData, isOrderSubmitted, totalAmount} = this.state
+    const {cartItemsData} = this.state
 
     return (
-      <div>
+      <>
         <Header />
-        {cartItemsData === null ? (
-          <EmptyCartView />
-        ) : (
-          !isOrderSubmitted && (
-            <div className="cart-items-container">
-              <div className="cart-header">
-                <p className="cart-value">Item</p>
-                <p className="cart-value">Quantity</p>
-                <p className="cart-value">Price</p>
-              </div>
-              <div className="cart-items">
-                {cartItemsData.map(eachObject => (
-                  <CartItems
-                    key={eachObject.id}
-                    cartItemDetails={eachObject}
-                    updateStatus={this.updateStatus}
-                  />
-                ))}
-              </div>
-              <hr className="hr-line" />
-              <div className="total-price-section">
-                <h1 className="order-total">Order Total:</h1>
-                <p className="total-price1">
-                  <span>&#8377;&nbsp;</span>
-                  {totalAmount}.00
-                </p>
-              </div>
-              <div className="button-section">
-                <button type="button" onClick={this.onClickShopNowButton}>
-                  Shop Now
-                </button>
-              </div>
-            </div>
-          )
-        )}
-        {isOrderSubmitted && <h1>Hello world</h1>}
-      </div>
+        {cartItemsData === null ? <EmptyCartView /> : this.renderView()}
+      </>
     )
   }
 }

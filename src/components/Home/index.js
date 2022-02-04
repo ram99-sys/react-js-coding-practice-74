@@ -115,12 +115,17 @@ class Home extends Component {
 
   renderSuccessView = () => {
     const {restaurantData} = this.state
-    console.log(restaurantData)
+    // console.log(restaurantData)
 
     return (
       <ul className="restaurant-details-container">
         {restaurantData.map(eachObject => (
-          <Link to={`/restaurant/${eachObject.id}`} className="link">
+          <Link
+            to={`/restaurant/${eachObject.id}`}
+            className="link"
+            key={eachObject.id}
+            testid="restaurant-item"
+          >
             <li key={eachObject.id} className="restaurant-details-item">
               <img
                 src={eachObject.imageUrl}
@@ -144,8 +149,17 @@ class Home extends Component {
   }
 
   renderInProgressView = () => (
-    <div className="home-loader-container">
-      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+    <div className="home-loader-container" testid="restaurants-list-loader">
+      <Loader
+        type="Oval"
+        color="#F7931E"
+        height="50"
+        width="50"
+        // strokeWidth={30}
+        // ariaLabel="loading-indicator"
+        // strokeWidthSecondary={30}
+        // secondaryColor="white"
+      />
     </div>
   )
 
@@ -207,16 +221,20 @@ class Home extends Component {
             type="button"
             className="pagination-button"
             onClick={this.onClickLeftArrow}
+            testid="pagination-left-button"
           >
             <AiOutlineLeftSquare size={30} className="icon" />
           </button>
-          <p className="active-page">{activePage}</p>
+          <p className="active-page" testid="active-page-number">
+            {activePage}
+          </p>
           <span className="of-text">&nbsp;of&nbsp;</span>
           <p className="page-count">{totalPageCount}</p>
           <button
             type="button"
             className="pagination-button"
             onClick={this.onClickRightArrow}
+            testid="pagination-right-button"
           >
             <AiOutlineRightSquare size={30} className="icon" />
           </button>

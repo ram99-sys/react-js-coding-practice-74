@@ -1,0 +1,51 @@
+.order-successful-container {
+  display: flex;
+  min-height: 85vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.order-successful-image {
+  height: 60px;
+  width: 60px;
+}
+.payment-successful-heading {
+  color: #1e293b;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'DM Sans';
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.thanks-text {
+  color: #64748b;
+  font-size: 18px;
+  font-family: 'DM Sans';
+  font-weight: 400;
+  text-align: center;
+}
+.thanks-section {
+  margin-bottom: 20px;
+}
+.redirection-button {
+  cursor: pointer;
+  color: #ffffff;
+  font-family: 'DM Sans';
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f7931e;
+}
+.order-now-button {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  font-family: 'DM Sans';
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #f7931e;
+  padding: 8px 15px;
+}

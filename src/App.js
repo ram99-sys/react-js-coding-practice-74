@@ -25,28 +25,20 @@ const sortByOptions = [
 */
 
 class App extends Component {
-  state = {cartList: []}
-
   addCartItem = itemDetails => {
     const {cost, id, imageUrl, name, quantity} = itemDetails
-    /*
-    const {cartList} = this.state
-    const data = {cost, id, imageUrl, name, quantity}
-    const updatedData = [...cartList, data]
-    this.setState({cartList: updatedData})
-    */
 
     // update on local storage
-    const storedData = JSON.parse(localStorage.getItem('cartItem'))
+    const storedData = JSON.parse(localStorage.getItem('cartData'))
     if (storedData === null) {
       const cartObject = {id, imageUrl, cost, name, quantity}
-      localStorage.setItem('cartItem', JSON.stringify([cartObject]))
+      localStorage.setItem('cartData', JSON.stringify([cartObject]))
     } else {
       const findObject = storedData.find(eachObject => eachObject.id === id)
       if (findObject === undefined) {
         const cartObject = {id, imageUrl, cost, name, quantity}
         storedData.push(cartObject)
-        localStorage.setItem('cartItem', JSON.stringify(storedData))
+        localStorage.setItem('cartData', JSON.stringify(storedData))
         // this.incrementItemQuantity(itemDetails)
       } else {
         this.incrementItemQuantity(itemDetails)
@@ -82,37 +74,25 @@ class App extends Component {
     const {id} = itemDetails
 
     // update quantity on local storage
-    const storedData = JSON.parse(localStorage.getItem('cartItem'))
+    const storedData = JSON.parse(localStorage.getItem('cartData'))
     console.log(storedData)
 
     const findObject = storedData.find(eachObject => eachObject.id === id)
     if (findObject.quantity === 1) {
       const updatedData = this.removeCartItem(storedData, id)
       console.log(updatedData)
-      localStorage.setItem('cartItem', JSON.stringify(updatedData))
+      localStorage.setItem('cartData', JSON.stringify(updatedData))
     } else {
       const updatedData = this.decreaseItemQuantity(storedData, id)
       console.log(updatedData)
-      localStorage.setItem('cartItem', JSON.stringify(updatedData))
+      localStorage.setItem('cartData', JSON.stringify(updatedData))
     }
   }
 
   incrementItemQuantity = itemDetails => {
     const {id} = itemDetails
-    /*
-    this.setState(prevState => ({
-      cartList: prevState.cartList.map(eachItem => {
-        if (eachItem.id === id) {
-          const updatedQuantity = eachItem.quantity + 1
-          return {...eachItem, quantity: updatedQuantity}
-        }
-        return eachItem
-      }),
-    }))
-    */
-
     // update Quantity on local Storage
-    const storedData = JSON.parse(localStorage.getItem('cartItem'))
+    const storedData = JSON.parse(localStorage.getItem('cartData'))
     // console.log(storedData)
 
     const updatedArray = storedData.map(eachObject => {
@@ -123,17 +103,13 @@ class App extends Component {
       return eachObject
     })
     console.log(updatedArray)
-    localStorage.setItem('cartItem', JSON.stringify(updatedArray))
+    localStorage.setItem('cartData', JSON.stringify(updatedArray))
   }
 
   render() {
-    const {cartList} = this.state
-    //  console.log(cartList)
-
     return (
       <CartContext.Provider
         value={{
-          cartList,
           addCartItem: this.addCartItem,
           decrementItemQuantity: this.decrementItemQuantity,
           incrementItemQuantity: this.incrementItemQuantity,

@@ -44,8 +44,8 @@ class Carousel extends Component {
   }
 
   renderInProgressView = () => (
-    <div className="loader-container">
-      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+    <div className="loader-container" testid="restaurants-offers-loader">
+      <Loader type="Oval" color="#F7931E" height="50" width="50" />
     </div>
   )
 
@@ -62,7 +62,7 @@ class Carousel extends Component {
             <li key={eachOfferDetails.id} className="slick-slide">
               <img
                 src={eachOfferDetails.imageUrl}
-                alt=""
+                alt="offer"
                 className="offer-image"
               />
             </li>
