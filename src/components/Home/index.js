@@ -129,7 +129,7 @@ class Home extends Component {
             <li key={eachObject.id} className="restaurant-details-item">
               <img
                 src={eachObject.imageUrl}
-                alt=""
+                alt="restaurant"
                 className="restaurant-image"
               />
               <div>
