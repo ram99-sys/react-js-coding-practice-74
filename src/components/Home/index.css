@@ -66,10 +66,10 @@
   display: flex;
   flex-wrap: wrap;
   padding-inline-start: 0px;
-  margin-left: 10%;
+  margin-left: 12%;
   align-items: center;
-  margin-right: 12%;
-  justify-content: space-evenly;
+  margin-right: 10%;
+  justify-content: space-between;
 }
 .restaurant-details-item {
   display: flex;
@@ -154,4 +154,28 @@
 .select-option:hover {
   background-color: #f1f5f9;
   color: #ffffff;
+}
+
+@media screen and (max-width: 1200px) {
+  .popular-restaurants-container {
+    margin-left: 50px;
+  }
+  .line {
+    margin-left: 50px;
+    width: 90%;
+  }
+  .text-sort-by-container {
+    margin-right: 50px;
+  }
+  .restaurant-details-container {
+    margin-left: 50px;
+    margin-right: 0px;
+    width: 92%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .popular-restaurants-text {
+    width: 400px;
+  }
 }

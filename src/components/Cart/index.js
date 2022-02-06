@@ -67,7 +67,7 @@ class Cart extends Component {
             <div className="total-price-section">
               <h1 className="order-total">Order Total:</h1>
               <p className="total-price1" testid="total-price">
-                {totalAmount}.00
+                ₹ {totalAmount}.00
               </p>
             </div>
             <button

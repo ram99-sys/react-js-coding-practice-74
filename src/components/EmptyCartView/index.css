@@ -1,5 +1,5 @@
 .empty-cart-container {
-  min-height: 85vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,4 +19,15 @@
   color: #64748b;
   font-size: 16px;
   margin-bottom: 10px;
+}
+.order-now-button {
+  cursor: pointer;
+  margin-bottom: 50px;
+  background-color: #f7931e;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 8px 20px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
 }

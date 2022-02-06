@@ -20,3 +20,13 @@
   align-items: center;
   height: 300px;
 }
+
+@media screen and (max-width: 1200px) {
+  .slider-container {
+    padding: 30px 50px;
+    width: 100%;
+  }
+  .offer-image {
+    height: 300px;
+  }
+}

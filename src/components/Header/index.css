@@ -2,7 +2,8 @@
   background-color: #f8fafc;
   display: flex;
   justify-content: space-between;
-  padding: 20px 12% 20px 12%;
+  padding: 20px 10% 20px 10%;
+  width: 100vw;
 }
 .website-logo-container {
 }
@@ -40,4 +41,17 @@
   font-size: 16px;
   cursor: pointer;
   padding: 8px 16px;
+}
+
+@media screen and (max-width: 1200px) {
+  .header-container {
+    padding: 20px 50px;
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .nav-links-container {
+    width: 30%;
+  }
 }

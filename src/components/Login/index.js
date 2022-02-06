@@ -66,6 +66,11 @@ class Login extends Component {
               />
               <h1 className="tasty-kitchen-text">Tasty Kitchens</h1>
             </div>
+            <img
+              src="https://res.cloudinary.com/dfzg7dbem/image/upload/v1644152831/Rectangle_1457_sx07yj.png"
+              alt=""
+              className="sm-image"
+            />
             <h1 className="login-text">Login</h1>
             <form onSubmit={this.submitForm}>
               <div className="input-container">

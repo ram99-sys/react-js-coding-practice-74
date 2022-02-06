@@ -53,5 +53,14 @@
   font-weight: 700;
   font-size: 16px;
   font-family: 'DM Sans';
-  width: 6%;
+  width: 140px;
+}
+
+@media screen and (max-width: 1200px) {
+  .image-and-name {
+    width: 70%;
+  }
+  .items-container1 {
+    margin-right: 5%;
+  }
 }

@@ -6,8 +6,8 @@
 .cart-items-container {
   margin-top: 80px;
   background-color: #f9fbfe;
-  margin-left: 12%;
-  margin-right: 12%;
+  margin-left: 10%;
+  margin-right: 10%;
   border: 1px solid rgba(11, 105, 255, 0.1);
   margin-bottom: 100px;
 }
@@ -16,7 +16,7 @@
   justify-content: space-between;
   padding: 20px;
   margin-left: 15%;
-  margin-right: 8%;
+  margin-right: 12%;
 }
 .cart-value {
   font-size: 20px;
@@ -46,7 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 8%;
+  margin-right: 10%;
 }
 .total-price1 {
   color: #3e4c59;
@@ -58,7 +58,7 @@
   cursor: pointer;
   margin-right: auto;
   margin-bottom: 30px;
-  margin-left: 83%;
+  margin-left: 80%;
   background-color: #f7931e;
   font-size: 16px;
   color: #ffffff;
@@ -66,4 +66,24 @@
   font-weight: 500;
   border-radius: 10px;
   border: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .cart-items-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .cart-header {
+    margin-right: 6%;
+  }
+  .hr-line {
+    margin-right: 4%;
+  }
+  .total-price-section {
+    margin-right: 4%;
+  }
+  .shop-now-button {
+    margin-right: 4%;
+    margin-left: 84%;
+  }
 }
