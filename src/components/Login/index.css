@@ -147,12 +147,12 @@
   .login-and-image-container {
     background-color: #ffffff;
     margin: 0px;
-    margin-top: -20px;
+    margin-top: -68px;
     width: 98vw;
   }
   .sm-image {
     display: flex;
     width: 95vw;
-    height: 300px;
+    height: 350px;
   }
 }

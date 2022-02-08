@@ -30,3 +30,20 @@
     height: 300px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .slider-container {
+    padding: 15px 30px;
+    width: 100%;
+  }
+  .offer-image {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .slider-container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

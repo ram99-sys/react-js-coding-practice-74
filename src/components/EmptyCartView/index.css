@@ -31,3 +31,13 @@
   border-radius: 10px;
   border: none;
 }
+
+@media screen and (max-width: 576px) {
+  .coffee-image {
+    height: 200px;
+    width: 250px;
+  }
+  .add-something-text {
+    text-align: center;
+  }
+}

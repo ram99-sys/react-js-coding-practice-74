@@ -24,34 +24,66 @@ class CartItems extends Component {
           }
 
           return (
-            <li className="items-container1">
-              <div className="image-and-name">
-                <img src={imageUrl} alt="" className="cart-item-image" />
-                <h1 className="dish-name1">{name}</h1>
-              </div>
-              <div className="controls-container">
-                <button
-                  type="button"
-                  className="minus-button1"
-                  onClick={onClickMinusButton}
-                  testid="decrement-quantity"
-                >
-                  <AiOutlineMinusSquare size={20} />
-                </button>
-                <p className="quantity-item" testid="item-quantity">
-                  {quantity}
-                </p>
-                <button
-                  type="button"
-                  className="plus-button1"
-                  onClick={onClickPlusButton}
-                  testid="increment-quantity"
-                >
-                  <AiOutlinePlusSquare size={20} />
-                </button>
-              </div>
-              <p className="total-order-price">₹ {cost * quantity}.00</p>
-            </li>
+            <>
+              <li className="items-container1" testid="cartItem">
+                <div className="image-and-name">
+                  <img src={imageUrl} alt="" className="cart-item-image" />
+                  <h1 className="dish-name1">{name}</h1>
+                </div>
+                <div className="controls-container">
+                  <button
+                    type="button"
+                    className="minus-button1"
+                    onClick={onClickMinusButton}
+                    testid="decrement-quantity"
+                  >
+                    <AiOutlineMinusSquare size={20} />
+                  </button>
+                  <p className="quantity-item" testid="item-quantity">
+                    {quantity}
+                  </p>
+                  <button
+                    type="button"
+                    className="plus-button1"
+                    onClick={onClickPlusButton}
+                    testid="increment-quantity"
+                  >
+                    <AiOutlinePlusSquare size={20} />
+                  </button>
+                </div>
+                <p className="total-order-price">₹ {cost * quantity}.00</p>
+              </li>
+              <li className="items-container2" testid="cartItem">
+                <div className="image-and-name">
+                  <img src={imageUrl} alt="" className="cart-item-image" />
+                </div>
+                <div className="name-controls-section1">
+                  <h1 className="dish-name1">{name}</h1>
+                  <div className="controls-container">
+                    <button
+                      type="button"
+                      className="minus-button1"
+                      onClick={onClickMinusButton}
+                      testid="decrement-quantity"
+                    >
+                      <AiOutlineMinusSquare size={20} />
+                    </button>
+                    <p className="quantity-item" testid="item-quantity">
+                      {quantity}
+                    </p>
+                    <button
+                      type="button"
+                      className="plus-button1"
+                      onClick={onClickPlusButton}
+                      testid="increment-quantity"
+                    >
+                      <AiOutlinePlusSquare size={20} />
+                    </button>
+                  </div>
+                  <p className="total-order-price">₹ {cost * quantity}.00</p>
+                </div>
+              </li>
+            </>
           )
         }}
       </CartContext.Consumer>

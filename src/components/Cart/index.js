@@ -53,7 +53,7 @@ class Cart extends Component {
             <p className="cart-value">Quantity</p>
             <p className="cart-value">Price</p>
           </div>
-          <ul className="cart-items" testid="cartItem">
+          <ul className="cart-items">
             {cartItemsData.map(eachObject => (
               <CartItems
                 key={eachObject.id}
@@ -70,13 +70,15 @@ class Cart extends Component {
                 ₹ {totalAmount}.00
               </p>
             </div>
-            <button
-              type="button"
-              onClick={this.onClickShopNowButton}
-              className="shop-now-button"
-            >
-              Place Order
-            </button>
+            <div className="button-container">
+              <button
+                type="button"
+                onClick={this.onClickShopNowButton}
+                className="shop-now-button"
+              >
+                Place Order
+              </button>
+            </div>
           </div>
         </ul>
         <Footer />

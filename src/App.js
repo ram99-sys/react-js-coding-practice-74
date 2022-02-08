@@ -25,6 +25,16 @@ const sortByOptions = [
 */
 
 class App extends Component {
+  state = {toggler: false}
+
+  openToggler = () => {
+    this.setState({toggler: true})
+  }
+
+  closeToggler = () => {
+    this.setState({toggler: false})
+  }
+
   addCartItem = itemDetails => {
     const {cost, id, imageUrl, name, quantity} = itemDetails
 
@@ -107,9 +117,14 @@ class App extends Component {
   }
 
   render() {
+    const {toggler} = this.state
+
     return (
       <CartContext.Provider
         value={{
+          toggler,
+          openToggler: this.openToggler,
+          closeToggler: this.closeToggler,
           addCartItem: this.addCartItem,
           decrementItemQuantity: this.decrementItemQuantity,
           incrementItemQuantity: this.incrementItemQuantity,

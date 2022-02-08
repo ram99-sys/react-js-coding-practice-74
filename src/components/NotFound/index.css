@@ -32,3 +32,10 @@
   padding: 8px 15px;
   margin-top: 20px;
 }
+
+@media screen and (max-width: 576px) {
+  .not-found-image {
+    height: 250px;
+    width: 200px;
+  }
+}

@@ -43,3 +43,30 @@
   justify-content: center;
   margin-top: 30px;
 }
+
+@media screen and (max-width: 768px) {
+  .footer-heading {
+    font-size: 24px;
+  }
+  .footer-image {
+    margin-right: 10px;
+  }
+  .footer-text {
+    font-size: 18px;
+  }
+  .footer-icon {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer-heading {
+    font-size: 18px;
+  }
+  .footer-text {
+    font-size: 14px;
+  }
+  .footer-container {
+    padding: 20px;
+  }
+}

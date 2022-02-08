@@ -179,3 +179,47 @@
     width: 400px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .text-sort-by-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .sort-by-container {
+    margin-top: 20px;
+  }
+  .restaurant-details-container {
+    margin-left: 20px;
+    justify-content: center;
+  }
+  .popular-restaurants-container {
+    margin-left: 20px;
+  }
+  .line {
+    margin-left: 20px;
+    width: 92%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .sort-by-container {
+    margin-top: 10px;
+  }
+  .line {
+    display: none;
+  }
+  .popular-restaurants-heading {
+    font-size: 20px;
+  }
+  .restaurant-details-container {
+    margin-top: 20px;
+  }
+  .popular-restaurants-container {
+    margin-top: 20px;
+  }
+  .popular-restaurants-text {
+    font-size: 16px;
+    width: 300px;
+  }
+}
